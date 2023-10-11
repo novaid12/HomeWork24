@@ -9,14 +9,11 @@ import UIKit
 
 class UsersTVC: UITableViewController {
     private var users: [User] = []
-//    private var albums: [Album] = []
-//    private var photos: [Photo] = []
+    private var photos: [Photo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUsers()
-//        fetchAlbums()
-//        fetchPhotos()
     }
     
     // MARK: - Table view data source
@@ -29,9 +26,7 @@ class UsersTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UsersCell", for: indexPath) as! UsersCell
         let user = users[indexPath.row]
         cell.nameLbl.text = user.name
-//        cell.imageView?.image = fetchImage(userId: user.id)
         cell.emailLbl.text = user.email
-        
         return cell
     }
     
@@ -67,75 +62,41 @@ class UsersTVC: UITableViewController {
         }.resume()
     }
     
-//    private func fetchAlbums() {
-//        guard let albumsURL = ApiConstants.albumsURL else { return }
-//        
-//        URLSession.shared.dataTask(with: albumsURL) { [weak self] data, _, error in
-//            
-//            guard let self else { return }
-//            
-//            if let error = error {
-//                print(error)
-//            }
-//            
-//            if let data = data {
-//                do {
-//                    self.albums = try JSONDecoder().decode([Album].self, from: data)
-//                } catch {
-//                    print(error)
-//                }
-//            }
-//            
-//        }.resume()
-//    }
-//    
-//    private func fetchPhotos() {
-//        guard let photosURL = ApiConstants.photosURL else { return }
-//        
-//        URLSession.shared.dataTask(with: photosURL) { [weak self] data, _, error in
-//            
-//            guard let self else { return }
-//            
-//            if let error = error {
-//                print(error)
-//            }
-//            
-//            if let data = data {
-//                do {
-//                    self.photos = try JSONDecoder().decode([Photo].self, from: data)
-//                } catch {
-//                    print(error)
-//                }
-//            }
-//            
-//        }.resume()
-//    }
-//    
-    private func fetchImage(userId: Int) -> UIImage? {
-//        var myImage: UIImage?
-//        var photo: Photo?
+//    func getAvatar(userId: Int) -> UIImage? {
+//        guard let photosURL = ApiConstants.photosURL else { return nil }
 //
-//        if self.albums[0].userId == userId, self.photos[0].albumId == self.albums[0].id {
-//            photo = photos[0]
-//        }
-//        print(photo)
-//        guard let url = URL(string: "") else { return nil }
+//        URLSession.shared.dataTask(with: photosURL) { [weak self] data, _, error in
+//
+//            guard let self else { return }
+//
+//            if let error = error {
+//                print(error)
+//            }
+//
+//            if let data = data {
+//                do {
+//                    let myPhotos = try JSONDecoder().decode([Photo].self, from: data)
+//                    self.photos = myPhotos.filter { $0.albumId == userId }
+//                } catch {
+//                    print(error)
+//                }
+//            }
+//
+//        }.resume()
+//
+//        var myImage: UIImage?
+//        let photo = photos.filter { $0.albumId == userId }
+//        guard let url = URL(string: photo[0].thumbnailUrl!) else { return nil }
 //
 //        let urlRequest = URLRequest(url: url)
 //
 //        URLSession.shared.dataTask(with: urlRequest) { data, _, _ in
-//
-//            DispatchQueue.main.async {
-//                if let data = data,
-//                   let image = UIImage(data: data)
-//                {
-//                    myImage = image
-//                } else {
-//                    // тут можно пользователю показать ошибку картинки
-//                }
+//            if let data = data,
+//               let image = UIImage(data: data)
+//            {
+//                myImage = image
 //            }
-//
 //        }.resume()
-        return nil
-    }
+//        return myImage
+//    }
 }

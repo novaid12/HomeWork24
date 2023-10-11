@@ -97,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="834.35114503816794" y="-25.35211267605634"/>
         </scene>
-        <!--ImageVC-->
+        <!--Image-->
         <scene sceneID="sNp-ZX-mme">
             <objects>
-                <viewController storyboardIdentifier="ImageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2LZ-2R-U8V" customClass="ImageVC" customModule="RestAppCW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2LZ-2R-U8V" customClass="ImageVC" customModule="HomeWork24" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bo0-dd-sl1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,7 +123,7 @@
                             <constraint firstItem="zJF-pj-9EN" firstAttribute="top" secondItem="ogL-dw-5l0" secondAttribute="top" id="z16-QQ-gPW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qfA-us-eql"/>
+                    <navigationItem key="navigationItem" title="Image" id="qfA-us-eql"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="gC0-P2-ejj" id="8sV-Qt-PVr"/>
                         <outlet property="imageView" destination="zJF-pj-9EN" id="WRN-qc-vEA"/>
@@ -133,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="2512" y="-456"/>
         </scene>
-        <!--UsersTVC-->
+        <!--All users-->
         <scene sceneID="U6i-dt-tJy">
             <objects>
-                <tableViewController id="xvP-Hf-dCf" customClass="UsersTVC" customModule="RestAppCW" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xvP-Hf-dCf" customClass="UsersTVC" customModule="HomeWork24" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="vF1-SM-f0S">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -199,16 +199,16 @@
                             <outlet property="delegate" destination="xvP-Hf-dCf" id="Rhi-6K-QHl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="W1B-E5-0OZ"/>
+                    <navigationItem key="navigationItem" title="All users" id="W1B-E5-0OZ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXf-vy-QIp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2511" y="267"/>
         </scene>
-        <!--DetailVC-->
+        <!--Details-->
         <scene sceneID="k4Z-N1-Dds">
             <objects>
-                <viewController storyboardIdentifier="DetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vuw-Py-foP" customClass="DetailVC" customModule="HomeWork24" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vuw-Py-foP" customClass="DetailVC" customModule="HomeWork24" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wnF-kN-mzj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,10 +217,10 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDp-Gv-Pza">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="749.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="653.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="kSj-cR-ylU">
-                                                <rect key="frame" x="25" y="20" width="343" height="649.33333333333337"/>
+                                                <rect key="frame" x="25" y="20" width="343" height="553.33333333333337"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="hty-Jv-ZFZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="330.33333333333331"/>
@@ -355,21 +355,30 @@
                                                             </button>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="5gl-4I-NPp">
-                                                        <rect key="frame" x="0.0" y="430.33333333333337" width="343" height="219"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5gl-4I-NPp">
+                                                        <rect key="frame" x="0.0" y="430.33333333333337" width="343" height="123"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpD-zj-HqU">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="34.333333333333336"/>
+                                                                <color key="tintColor" systemColor="systemGreenColor"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="filled" title="Posts"/>
+                                                                <buttonConfiguration key="configuration" style="filled" title="Posts">
+                                                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="allPostsBtn:" destination="vuw-Py-foP" eventType="touchUpInside" id="ecW-xh-zHr"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1a-xY-DQN">
-                                                                <rect key="frame" x="0.0" y="92.333333333333258" width="343" height="34.333333333333343"/>
+                                                                <rect key="frame" x="0.0" y="44.333333333333258" width="343" height="34.333333333333343"/>
+                                                                <color key="tintColor" systemColor="systemRedColor"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="filled" title="Alboms"/>
+                                                                <buttonConfiguration key="configuration" style="filled" title="Albums">
+                                                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                                                </buttonConfiguration>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kh3-LI-je3">
-                                                                <rect key="frame" x="0.0" y="184.66666666666663" width="343" height="34.333333333333343"/>
+                                                                <rect key="frame" x="0.0" y="88.666666666666629" width="343" height="34.333333333333343"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="filled" title="ToDo-s"/>
                                                             </button>
@@ -407,7 +416,7 @@
                             <constraint firstItem="yiF-dj-kmT" firstAttribute="trailing" secondItem="Urq-4a-dac" secondAttribute="trailing" id="kKw-0U-Co6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pt8-dr-ZZe"/>
+                    <navigationItem key="navigationItem" title="Details" id="pt8-dr-ZZe"/>
                     <connections>
                         <outlet property="adressLbl" destination="Btq-VZ-2O2" id="wsi-Gd-CQJ"/>
                         <outlet property="emailLbl" destination="zPy-9r-Xdx" id="Ich-4c-Rtp"/>
@@ -415,13 +424,72 @@
                         <outlet property="phoneLbl" destination="3QH-Sn-9eM" id="jmp-YT-8ra"/>
                         <outlet property="userNameLbl" destination="FaJ-B6-m0f" id="YZv-Cf-U6A"/>
                         <outlet property="webSiteLbl" destination="oJP-Mr-1g7" id="7fo-BH-n2r"/>
+                        <segue destination="2Um-Di-voc" kind="show" id="5qr-xz-5h4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLh-fn-CXM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3260" y="267"/>
         </scene>
-        <!--MapVC-->
+        <!--Posts-->
+        <scene sceneID="Ca4-vK-lFo">
+            <objects>
+                <tableViewController storyboardIdentifier="PostsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Um-Di-voc" customClass="PostsVC" customModule="HomeWork24" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Ehl-bc-kL4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostsCell" id="8KU-gc-RUm" customClass="PostsCell" customModule="HomeWork24" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="74.666664123535156"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8KU-gc-RUm" id="F2R-nz-l9B">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="74.666664123535156"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qh7-yL-neV">
+                                            <rect key="frame" x="10" y="9.9999999999999964" width="373" height="54.666666666666657"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfs-Ej-0KL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="373" height="24.333333333333332"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acN-De-r2E">
+                                                    <rect key="frame" x="0.0" y="34.333333333333336" width="373" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Qh7-yL-neV" secondAttribute="bottom" constant="10" id="JLl-Ku-fT2"/>
+                                        <constraint firstItem="Qh7-yL-neV" firstAttribute="leading" secondItem="F2R-nz-l9B" secondAttribute="leading" constant="10" id="UWe-Ik-3R4"/>
+                                        <constraint firstAttribute="trailing" secondItem="Qh7-yL-neV" secondAttribute="trailing" constant="10" id="YkP-Bg-gkW"/>
+                                        <constraint firstItem="Qh7-yL-neV" firstAttribute="top" secondItem="F2R-nz-l9B" secondAttribute="top" constant="10" id="nz3-ll-RbX"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bodyLbl" destination="acN-De-r2E" id="hHy-cH-mHX"/>
+                                    <outlet property="titleLbl" destination="Gfs-Ej-0KL" id="YQM-r9-wSx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2Um-Di-voc" id="cAE-lH-Uu5"/>
+                            <outlet property="delegate" destination="2Um-Di-voc" id="nIm-Mw-bBr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Posts" id="boF-45-f7a"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SFB-FD-bmp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4094" y="16"/>
+        </scene>
+        <!--Map-->
         <scene sceneID="MGA-un-CdQ">
             <objects>
                 <viewController storyboardIdentifier="MapVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JhA-ak-ccP" customClass="MapVC" customModule="HomeWork24" customModuleProvider="target" sceneMemberID="viewController">
@@ -443,14 +511,14 @@
                             <constraint firstItem="tCT-yo-GzX" firstAttribute="bottom" secondItem="zu1-Cd-mk3" secondAttribute="bottom" constant="25" id="wye-08-vGX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Haf-Ep-ENp"/>
+                    <navigationItem key="navigationItem" title="Map" id="Haf-Ep-ENp"/>
                     <connections>
                         <outlet property="mapView" destination="zu1-Cd-mk3" id="X0v-cb-Tyi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JEx-xM-dYR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4022" y="283"/>
+            <point key="canvasLocation" x="4094" y="743"/>
         </scene>
     </scenes>
     <resources>
@@ -459,8 +527,14 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

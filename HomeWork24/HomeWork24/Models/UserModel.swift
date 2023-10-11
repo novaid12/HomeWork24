@@ -5,8 +5,8 @@
 //  Created by  NovA on 11.10.23.
 //
 
-import Foundation
 import CoreLocation
+import Foundation
 
 struct User: Codable {
     let id: Int
@@ -28,8 +28,8 @@ struct Address: Codable {
 }
 
 struct Geo: Codable {
-    let lat: CLLocationDegrees?
-    let lng: CLLocationDegrees?
+    let lat: String?
+    let lng: String?
 }
 
 struct Company: Codable {
@@ -50,4 +50,11 @@ struct Photo: Codable {
     let title: String?
     let url: String?
     let thumbnailUrl: String?
+}
+
+struct Post: Codable {
+    let userId: Int?
+    let id: Int
+    let title: String?
+    let body: String?
 }

@@ -22,11 +22,10 @@ class MapVC: UIViewController, MKMapViewDelegate {
 
     func createAnnotation() {
         guard let geo = geo else { return }
-        let coordinate = CLLocationCoordinate2D(latitude: geo.lat!, longitude: geo.lng!)
+        let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(geo.lat!)!, longitude: CLLocationDegrees(geo.lng!)!)
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
-        annotation.title = "Тут я живу"
-        annotation.subtitle = "Описание места"
+        annotation.title = "This is where I live"
         mapView.addAnnotation(annotation)
         let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
         mapView.setRegion(region, animated: true)
