@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PostsCell: UITableViewCell {
+final class PostsCell: UITableViewCell {
     @IBOutlet var titleLbl: UILabel!
     @IBOutlet var bodyLbl: UILabel!
 }

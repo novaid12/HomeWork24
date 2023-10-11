@@ -7,12 +7,11 @@
 
 import UIKit
 
-class ImageVC: UIViewController {
+final class ImageVC: UIViewController {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
     
-    private let imageURL = "https://img.badfon.ru/original/6000x4000/1/e9/arizona-horseshoe-bend-river-1468.jpg"
-    private let imageURL2 = "https://w.forfun.com/fetch/29/2942cda3da91073bcaf9915bec9195d5.jpeg"
+    private let imageURL = "https://www.usgbc.org/sites/default/files/2023-06/Photo%20credit_carles-rabada-unsplash_0.jpg"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,25 +19,11 @@ class ImageVC: UIViewController {
     }
     
     private func fetchImage() {
-        guard let url = URL(string: imageURL2) else { return }
+        guard let url = URL(string: imageURL) else { return }
         
         let urlRequest = URLRequest(url: url)
         
-//        URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-//            print(data)
-//            print(response)
-//            print(error)
-//        }.resume()
-        
         let task = URLSession.shared.dataTask(with: urlRequest) { [weak self] data, response, error in
-            
-            print(data)
-            print(response)
-            print(error)
-            
-            /*
-             работа с UI всегда идет в главном потоке (main thread)
-             */
             
             DispatchQueue.main.async {
                 self?.activityIndicatorView.stopAnimating()

@@ -7,13 +7,13 @@
 
 import UIKit
 
-class PostsVC: UITableViewController {
+final class PostsVC: UITableViewController {
     private var posts: [Post] = []
     var userId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchUsers()
+        fetchPosts()
         // Do any additional setup after loading the view.
     }
     
@@ -29,7 +29,7 @@ class PostsVC: UITableViewController {
         return cell
     }
 
-    private func fetchUsers() {
+    private func fetchPosts() {
         guard let postsURL = ApiConstants.postsURL else { return }
         
         URLSession.shared.dataTask(with: postsURL) { [weak self] data, _, error in

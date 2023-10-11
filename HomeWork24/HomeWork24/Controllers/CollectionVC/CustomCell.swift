@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomCell: UICollectionViewCell {
+final class CustomCell: UICollectionViewCell {
     @IBOutlet var infoLbl: UILabel!
     @IBOutlet weak var viewBtn: UIView!
 }

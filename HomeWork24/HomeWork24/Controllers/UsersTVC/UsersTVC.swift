@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UsersTVC: UITableViewController {
+final class UsersTVC: UITableViewController {
     private var users: [User] = []
     private var photos: [Photo] = []
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailVC: UIViewController {
+final class DetailVC: UIViewController {
     var user: User?
 
     @IBOutlet var nameLbl: UILabel!

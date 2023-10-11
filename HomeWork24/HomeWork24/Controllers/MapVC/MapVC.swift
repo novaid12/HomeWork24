@@ -8,7 +8,7 @@
 import MapKit
 import UIKit
 
-class MapVC: UIViewController, MKMapViewDelegate {
+final class MapVC: UIViewController, MKMapViewDelegate {
     var geo: Geo?
 
     @IBOutlet var mapView: MKMapView!
