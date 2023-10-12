@@ -9,13 +9,14 @@ import UIKit
 
 final class DetailVC: UIViewController {
     var user: User?
-
+    var urlPhoto: String?
     @IBOutlet var nameLbl: UILabel!
     @IBOutlet var userNameLbl: UILabel!
     @IBOutlet var emailLbl: UILabel!
     @IBOutlet var phoneLbl: UILabel!
     @IBOutlet var webSiteLbl: UILabel!
     @IBOutlet var adressLbl: UILabel!
+    @IBOutlet var imageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,23 @@ final class DetailVC: UIViewController {
         phoneLbl.text = user.phone
         webSiteLbl.text = user.website
         adressLbl.text = (user.address?.city)! + ", " + (user.address?.street)!
+
+        guard let urlPhoto = urlPhoto, let url = URL(string: urlPhoto) else { return }
+
+        let urlRequest = URLRequest(url: url)
+
+        URLSession.shared.dataTask(with: urlRequest) { [weak self] data, _, _ in
+
+            guard let self else { return }
+            DispatchQueue.main.async {
+                if let data = data,
+                   let image = UIImage(data: data)
+                {
+                    self.imageView.image = image
+                    self.imageView.layer.cornerRadius = 25
+                }
+            }
+        }.resume()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

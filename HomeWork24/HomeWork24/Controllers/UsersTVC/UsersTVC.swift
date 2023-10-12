@@ -10,6 +10,7 @@ import UIKit
 final class UsersTVC: UITableViewController {
     private var users: [User] = []
     private var photos: [Photo] = []
+    private var avatarsUrl: [String] = []
 
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
@@ -30,7 +31,8 @@ final class UsersTVC: UITableViewController {
 
         let photo = photos.filter { $0.albumId == user.id }
 
-        guard let url = photo[0].thumbnailUrl else { return cell }
+        guard let url = photo[0].thumbnailUrl, let fullUrl = photo[0].url else { return cell }
+        avatarsUrl.append(fullUrl)
 
         cell.nameLbl.text = user.name
         cell.emailLbl.text = user.email
@@ -57,6 +59,7 @@ final class UsersTVC: UITableViewController {
               let detailVC = segue.destination as? DetailVC else { return }
         let user = users[indexPath.row]
         detailVC.user = user
+        detailVC.urlPhoto = avatarsUrl[indexPath.row]
     }
 
     private func fetchUsers() {
