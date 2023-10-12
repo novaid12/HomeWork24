@@ -3,7 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
-        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -368,7 +367,7 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Open map"/>
                                                                 <connections>
-                                                                    <segue destination="JhA-ak-ccP" kind="show" id="8sG-mE-xr2"/>
+                                                                    <action selector="openMap:" destination="vuw-Py-foP" eventType="touchUpInside" id="vMi-8r-rij"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -507,37 +506,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SFB-FD-bmp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4094" y="16"/>
-        </scene>
-        <!--Map-->
-        <scene sceneID="MGA-un-CdQ">
-            <objects>
-                <viewController storyboardIdentifier="MapVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JhA-ak-ccP" customClass="MapVC" customModule="HomeWork24" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0vw-LW-lx8">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zu1-Cd-mk3">
-                                <rect key="frame" x="25" y="128" width="343" height="665"/>
-                                <standardMapConfiguration key="preferredConfiguration"/>
-                            </mapView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="tCT-yo-GzX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="tCT-yo-GzX" firstAttribute="trailing" secondItem="zu1-Cd-mk3" secondAttribute="trailing" constant="25" id="HsL-gb-lWo"/>
-                            <constraint firstItem="zu1-Cd-mk3" firstAttribute="leading" secondItem="tCT-yo-GzX" secondAttribute="leading" constant="25" id="Kdc-K7-pkm"/>
-                            <constraint firstItem="zu1-Cd-mk3" firstAttribute="top" secondItem="tCT-yo-GzX" secondAttribute="top" constant="25" id="XeD-eW-Zea"/>
-                            <constraint firstItem="tCT-yo-GzX" firstAttribute="bottom" secondItem="zu1-Cd-mk3" secondAttribute="bottom" constant="25" id="wye-08-vGX"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Map" id="Haf-Ep-ENp"/>
-                    <connections>
-                        <outlet property="mapView" destination="zu1-Cd-mk3" id="X0v-cb-Tyi"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JEx-xM-dYR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4094" y="743"/>
         </scene>
     </scenes>
     <resources>

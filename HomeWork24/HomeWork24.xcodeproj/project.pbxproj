@@ -20,7 +20,6 @@
 		9803E8012AD6A0F2006BB489 /* UsersTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803E8002AD6A0F2006BB489 /* UsersTVC.swift */; };
 		9803E8032AD6A133006BB489 /* UsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803E8022AD6A133006BB489 /* UsersCell.swift */; };
 		9803E8062AD6A493006BB489 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803E8052AD6A493006BB489 /* DetailVC.swift */; };
-		9803E8092AD6CA9B006BB489 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803E8082AD6CA9A006BB489 /* MapVC.swift */; };
 		9803E80F2AD6E646006BB489 /* PostsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803E80E2AD6E646006BB489 /* PostsVC.swift */; };
 		9803E8112AD6EBD4006BB489 /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803E8102AD6EBD4006BB489 /* PostsCell.swift */; };
 /* End PBXBuildFile section */
@@ -41,7 +40,6 @@
 		9803E8002AD6A0F2006BB489 /* UsersTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTVC.swift; sourceTree = "<group>"; };
 		9803E8022AD6A133006BB489 /* UsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCell.swift; sourceTree = "<group>"; };
 		9803E8052AD6A493006BB489 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
-		9803E8082AD6CA9A006BB489 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		9803E80E2AD6E646006BB489 /* PostsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsVC.swift; sourceTree = "<group>"; };
 		9803E8102AD6EBD4006BB489 /* PostsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				9803E80D2AD6E619006BB489 /* PostsVC */,
-				9803E8072AD6CA86006BB489 /* MapVC */,
 				9803E8042AD6A465006BB489 /* DetailVC */,
 				9803E7F72AD69F0A006BB489 /* CollectionVC */,
 				9803E7FC2AD69FE4006BB489 /* ImageView */,
@@ -158,14 +155,6 @@
 				9803E8052AD6A493006BB489 /* DetailVC.swift */,
 			);
 			path = DetailVC;
-			sourceTree = "<group>";
-		};
-		9803E8072AD6CA86006BB489 /* MapVC */ = {
-			isa = PBXGroup;
-			children = (
-				9803E8082AD6CA9A006BB489 /* MapVC.swift */,
-			);
-			path = MapVC;
 			sourceTree = "<group>";
 		};
 		9803E80D2AD6E619006BB489 /* PostsVC */ = {
@@ -255,7 +244,6 @@
 				9803E8112AD6EBD4006BB489 /* PostsCell.swift in Sources */,
 				9803E7FE2AD69FFB006BB489 /* ImageVC.swift in Sources */,
 				9803E80F2AD6E646006BB489 /* PostsVC.swift in Sources */,
-				9803E8092AD6CA9B006BB489 /* MapVC.swift in Sources */,
 				9803E8062AD6A493006BB489 /* DetailVC.swift in Sources */,
 				9803E7F42AD69ED2006BB489 /* UserModel.swift in Sources */,
 				9803E7DE2AD69BF2006BB489 /* SceneDelegate.swift in Sources */,

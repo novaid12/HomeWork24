@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
 final class DetailVC: UIViewController {
     var user: User?
@@ -30,6 +32,9 @@ final class DetailVC: UIViewController {
         navigationController?.pushViewController(postsVC, animated: true)
     }
 
+    @IBAction func openMap(_ sender: Any) {
+        openMapForPlace()
+    }
     private func setupUI() {
         guard let user = user else { return }
         nameLbl.text = user.name
@@ -57,8 +62,20 @@ final class DetailVC: UIViewController {
         }.resume()
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let mapVC = segue.destination as? MapVC else { return }
-        mapVC.geo = user?.address?.geo
+    func openMapForPlace() {
+        let latitude = CLLocationDegrees((user?.address?.geo?.lat)!)
+        let longitude = CLLocationDegrees((user?.address?.geo?.lng)!)
+
+        let regionDistance: CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(latitude!, longitude!)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "Place Name"
+        mapItem.openInMaps(launchOptions: options)
     }
 }
