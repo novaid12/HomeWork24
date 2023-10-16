@@ -9,7 +9,7 @@ import Alamofire
 import SwiftyJSON
 import UIKit
 
-class CreateUserVC: UIViewController {
+final class CreateUserVC: UIViewController {
     var user: User?
     var editType: Bool = false
     var delegate: UpdateUser?
@@ -110,7 +110,7 @@ class CreateUserVC: UIViewController {
                     }
             }
         }
-   
+
         navigationController?.popViewController(animated: true)
     }
 }

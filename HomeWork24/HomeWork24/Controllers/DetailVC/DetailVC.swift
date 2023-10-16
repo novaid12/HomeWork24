@@ -32,13 +32,29 @@ final class DetailVC: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let postsVC = storyboard.instantiateViewController(withIdentifier: "PostsVC") as! PostsVC
         postsVC.userId = userData?.id
+        postsVC.user = userData
         navigationController?.pushViewController(postsVC, animated: true)
     }
 
+    @IBAction func openAlbumsList(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let albumsCVC = storyboard.instantiateViewController(withIdentifier: "AlbumsCVC") as! AlbumsCVC
+        albumsCVC.userId = userData?.id.description
+        navigationController?.pushViewController(albumsCVC, animated: true)
+    }
     @IBAction func openMap(_ sender: Any) {
         openMapForPlace()
     }
 
+   
+    @IBAction func editUserData(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let createVC = storyboard.instantiateViewController(withIdentifier: "CreateUserVC") as! CreateUserVC
+        createVC.user = userData
+        createVC.editType = true
+        createVC.delegate = self
+        navigationController?.pushViewController(createVC, animated: true)
+    }
     private func setupUI() {
         guard let user = userData else { return }
         nameLbl.text = user.name
@@ -49,15 +65,6 @@ final class DetailVC: UIViewController {
         adressLbl.text = (user.address?.city)! + ", " + (user.address?.street)!
         imageView.image = UIImage(systemName: "person.fill")
         openMapBtn.isHidden = userData?.address?.geo == nil ? true : false
-    }
-
-    @IBAction func editUserData(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let createVC = storyboard.instantiateViewController(withIdentifier: "CreateUserVC") as! CreateUserVC
-        createVC.user = userData
-        createVC.editType = true
-        createVC.delegate = self
-        navigationController?.pushViewController(createVC, animated: true)
     }
 
     func openMapForPlace() {
