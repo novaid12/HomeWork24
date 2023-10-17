@@ -8,5 +8,6 @@
 import UIKit
 
 class AlbumsCell: UICollectionViewCell {
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var photosCount: UILabel!
 }
