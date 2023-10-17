@@ -5,13 +5,16 @@
 //  Created by  NovA on 11.10.23.
 //
 
-import UIKit
 import CoreLocation
 import MapKit
+import UIKit
+
+protocol UpdateUser {
+    func updateUserData(user: User)
+}
 
 final class DetailVC: UIViewController {
-    var user: User?
-    var urlPhoto: String?
+    var userData: User?
     @IBOutlet var nameLbl: UILabel!
     @IBOutlet var userNameLbl: UILabel!
     @IBOutlet var emailLbl: UILabel!
@@ -19,52 +22,54 @@ final class DetailVC: UIViewController {
     @IBOutlet var webSiteLbl: UILabel!
     @IBOutlet var adressLbl: UILabel!
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var openMapBtn: UIButton!
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         setupUI()
     }
 
     @IBAction func allPostsBtn(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let postsVC = storyboard.instantiateViewController(withIdentifier: "PostsVC") as! PostsVC
-        postsVC.userId = user?.id
+        postsVC.userId = userData?.id
+        postsVC.user = userData
         navigationController?.pushViewController(postsVC, animated: true)
     }
 
+    @IBAction func openAlbumsList(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let albumsCVC = storyboard.instantiateViewController(withIdentifier: "AlbumsCVC") as! AlbumsCVC
+        albumsCVC.userId = userData?.id.description
+        navigationController?.pushViewController(albumsCVC, animated: true)
+    }
     @IBAction func openMap(_ sender: Any) {
         openMapForPlace()
     }
+
+   
+    @IBAction func editUserData(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let createVC = storyboard.instantiateViewController(withIdentifier: "CreateUserVC") as! CreateUserVC
+        createVC.user = userData
+        createVC.editType = true
+        createVC.delegate = self
+        navigationController?.pushViewController(createVC, animated: true)
+    }
     private func setupUI() {
-        guard let user = user else { return }
+        guard let user = userData else { return }
         nameLbl.text = user.name
         userNameLbl.text = user.username
         emailLbl.text = user.email
         phoneLbl.text = user.phone
         webSiteLbl.text = user.website
         adressLbl.text = (user.address?.city)! + ", " + (user.address?.street)!
-
-        guard let urlPhoto = urlPhoto, let url = URL(string: urlPhoto) else { return }
-
-        let urlRequest = URLRequest(url: url)
-
-        URLSession.shared.dataTask(with: urlRequest) { [weak self] data, _, _ in
-
-            guard let self else { return }
-            DispatchQueue.main.async {
-                if let data = data,
-                   let image = UIImage(data: data)
-                {
-                    self.imageView.image = image
-                    self.imageView.layer.cornerRadius = 25
-                }
-            }
-        }.resume()
+        imageView.image = UIImage(systemName: "person.fill")
+        openMapBtn.isHidden = userData?.address?.geo == nil ? true : false
     }
 
     func openMapForPlace() {
-        let latitude = CLLocationDegrees((user?.address?.geo?.lat)!)
-        let longitude = CLLocationDegrees((user?.address?.geo?.lng)!)
+        let latitude = CLLocationDegrees((userData?.address?.geo?.lat)!)
+        let longitude = CLLocationDegrees((userData?.address?.geo?.lng)!)
 
         let regionDistance: CLLocationDistance = 10000
         let coordinates = CLLocationCoordinate2DMake(latitude!, longitude!)
@@ -77,5 +82,12 @@ final class DetailVC: UIViewController {
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = "Place Name"
         mapItem.openInMaps(launchOptions: options)
+    }
+}
+
+extension DetailVC: UpdateUser {
+    func updateUserData(user: User) {
+        userData = user
+        setupUI()
     }
 }

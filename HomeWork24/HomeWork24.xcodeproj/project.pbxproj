@@ -22,6 +22,16 @@
 		9803E8062AD6A493006BB489 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803E8052AD6A493006BB489 /* DetailVC.swift */; };
 		9803E80F2AD6E646006BB489 /* PostsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803E80E2AD6E646006BB489 /* PostsVC.swift */; };
 		9803E8112AD6EBD4006BB489 /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803E8102AD6EBD4006BB489 /* PostsCell.swift */; };
+		98A944052ADD270E00C0D22D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 98A944042ADD270E00C0D22D /* Alamofire */; };
+		98A944082ADD275000C0D22D /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 98A944072ADD275000C0D22D /* AlamofireImage */; };
+		98A9440B2ADD276E00C0D22D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 98A9440A2ADD276E00C0D22D /* SwiftyJSON */; };
+		98A9440E2ADD2AA800C0D22D /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9440D2ADD2AA800C0D22D /* NetworkServices.swift */; };
+		98A944112ADD366400C0D22D /* CreateUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A944102ADD366400C0D22D /* CreateUserVC.swift */; };
+		98A944142ADD816200C0D22D /* CommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A944132ADD816200C0D22D /* CommentsVC.swift */; };
+		98A944172ADD818C00C0D22D /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A944162ADD818C00C0D22D /* CommentCell.swift */; };
+		98A9441A2ADD90CE00C0D22D /* NewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A944192ADD90CE00C0D22D /* NewPostVC.swift */; };
+		98A9441D2ADD94D100C0D22D /* AlbumsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9441C2ADD94D100C0D22D /* AlbumsCVC.swift */; };
+		98A9441F2ADD97C700C0D22D /* AlbumsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9441E2ADD97C700C0D22D /* AlbumsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +52,13 @@
 		9803E8052AD6A493006BB489 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		9803E80E2AD6E646006BB489 /* PostsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsVC.swift; sourceTree = "<group>"; };
 		9803E8102AD6EBD4006BB489 /* PostsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
+		98A9440D2ADD2AA800C0D22D /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
+		98A944102ADD366400C0D22D /* CreateUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserVC.swift; sourceTree = "<group>"; };
+		98A944132ADD816200C0D22D /* CommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsVC.swift; sourceTree = "<group>"; };
+		98A944162ADD818C00C0D22D /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		98A944192ADD90CE00C0D22D /* NewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostVC.swift; sourceTree = "<group>"; };
+		98A9441C2ADD94D100C0D22D /* AlbumsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCVC.swift; sourceTree = "<group>"; };
+		98A9441E2ADD97C700C0D22D /* AlbumsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98A9440B2ADD276E00C0D22D /* SwiftyJSON in Frameworks */,
+				98A944052ADD270E00C0D22D /* Alamofire in Frameworks */,
+				98A944082ADD275000C0D22D /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +94,7 @@
 		9803E7DA2AD69BF1006BB489 /* HomeWork24 */ = {
 			isa = PBXGroup;
 			children = (
+				98A9440C2ADD2A9100C0D22D /* Services */,
 				9803E7F22AD69D9A006BB489 /* Models */,
 				9803E7F02AD69D80006BB489 /* Views */,
 				9803E7F12AD69D8F006BB489 /* Controllers */,
@@ -105,6 +126,10 @@
 		9803E7F12AD69D8F006BB489 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				98A9441B2ADD94BB00C0D22D /* AlbumsVC */,
+				98A944182ADD90B200C0D22D /* NewPostVC */,
+				98A944122ADD814500C0D22D /* CommentsVC */,
+				98A9440F2ADD364600C0D22D /* CreateUserVC */,
 				9803E80D2AD6E619006BB489 /* PostsVC */,
 				9803E8042AD6A465006BB489 /* DetailVC */,
 				9803E7F72AD69F0A006BB489 /* CollectionVC */,
@@ -166,6 +191,48 @@
 			path = PostsVC;
 			sourceTree = "<group>";
 		};
+		98A9440C2ADD2A9100C0D22D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				98A9440D2ADD2AA800C0D22D /* NetworkServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		98A9440F2ADD364600C0D22D /* CreateUserVC */ = {
+			isa = PBXGroup;
+			children = (
+				98A944102ADD366400C0D22D /* CreateUserVC.swift */,
+			);
+			path = CreateUserVC;
+			sourceTree = "<group>";
+		};
+		98A944122ADD814500C0D22D /* CommentsVC */ = {
+			isa = PBXGroup;
+			children = (
+				98A944132ADD816200C0D22D /* CommentsVC.swift */,
+				98A944162ADD818C00C0D22D /* CommentCell.swift */,
+			);
+			path = CommentsVC;
+			sourceTree = "<group>";
+		};
+		98A944182ADD90B200C0D22D /* NewPostVC */ = {
+			isa = PBXGroup;
+			children = (
+				98A944192ADD90CE00C0D22D /* NewPostVC.swift */,
+			);
+			path = NewPostVC;
+			sourceTree = "<group>";
+		};
+		98A9441B2ADD94BB00C0D22D /* AlbumsVC */ = {
+			isa = PBXGroup;
+			children = (
+				98A9441C2ADD94D100C0D22D /* AlbumsCVC.swift */,
+				98A9441E2ADD97C700C0D22D /* AlbumsCell.swift */,
+			);
+			path = AlbumsVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,6 +249,11 @@
 			dependencies = (
 			);
 			name = HomeWork24;
+			packageProductDependencies = (
+				98A944042ADD270E00C0D22D /* Alamofire */,
+				98A944072ADD275000C0D22D /* AlamofireImage */,
+				98A9440A2ADD276E00C0D22D /* SwiftyJSON */,
+			);
 			productName = HomeWork24;
 			productReference = 9803E7D82AD69BF1006BB489 /* HomeWork24.app */;
 			productType = "com.apple.product-type.application";
@@ -210,6 +282,11 @@
 				Base,
 			);
 			mainGroup = 9803E7CF2AD69BF1006BB489;
+			packageReferences = (
+				98A944032ADD270E00C0D22D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				98A944062ADD275000C0D22D /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				98A944092ADD276E00C0D22D /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = 9803E7D92AD69BF1006BB489 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -238,17 +315,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				9803E8012AD6A0F2006BB489 /* UsersTVC.swift in Sources */,
+				98A9440E2ADD2AA800C0D22D /* NetworkServices.swift in Sources */,
 				9803E8032AD6A133006BB489 /* UsersCell.swift in Sources */,
 				9803E7F62AD69EEB006BB489 /* ApiConstants.swift in Sources */,
 				9803E7DC2AD69BF2006BB489 /* AppDelegate.swift in Sources */,
+				98A9441A2ADD90CE00C0D22D /* NewPostVC.swift in Sources */,
 				9803E8112AD6EBD4006BB489 /* PostsCell.swift in Sources */,
 				9803E7FE2AD69FFB006BB489 /* ImageVC.swift in Sources */,
+				98A9441D2ADD94D100C0D22D /* AlbumsCVC.swift in Sources */,
+				98A9441F2ADD97C700C0D22D /* AlbumsCell.swift in Sources */,
 				9803E80F2AD6E646006BB489 /* PostsVC.swift in Sources */,
 				9803E8062AD6A493006BB489 /* DetailVC.swift in Sources */,
 				9803E7F42AD69ED2006BB489 /* UserModel.swift in Sources */,
 				9803E7DE2AD69BF2006BB489 /* SceneDelegate.swift in Sources */,
 				9803E7FB2AD69F6B006BB489 /* CustomCell.swift in Sources */,
 				9803E7F92AD69F27006BB489 /* CollectionVC.swift in Sources */,
+				98A944112ADD366400C0D22D /* CreateUserVC.swift in Sources */,
+				98A944142ADD816200C0D22D /* CommentsVC.swift in Sources */,
+				98A944172ADD818C00C0D22D /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +555,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		98A944032ADD270E00C0D22D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.0;
+			};
+		};
+		98A944062ADD275000C0D22D /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.0;
+			};
+		};
+		98A944092ADD276E00C0D22D /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		98A944042ADD270E00C0D22D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98A944032ADD270E00C0D22D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		98A944072ADD275000C0D22D /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98A944062ADD275000C0D22D /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+		98A9440A2ADD276E00C0D22D /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98A944092ADD276E00C0D22D /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9803E7D02AD69BF1006BB489 /* Project object */;
 }

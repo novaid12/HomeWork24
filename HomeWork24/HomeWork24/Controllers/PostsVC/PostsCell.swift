@@ -10,4 +10,5 @@ import UIKit
 final class PostsCell: UITableViewCell {
     @IBOutlet var titleLbl: UILabel!
     @IBOutlet var bodyLbl: UILabel!
+    @IBOutlet var countComments: UILabel!
 }
