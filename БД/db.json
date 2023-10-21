@@ -39829,13 +39829,13 @@
       "userId": 1,
       "id": 1,
       "title": "2 todo",
-      "completed": false
+      "completed": true
     },
     {
       "userId": 1,
       "id": 2,
       "title": "quis ut nam facilis et officia qui",
-      "completed": false
+      "completed": true
     },
     {
       "userId": 1,
@@ -39859,7 +39859,7 @@
       "userId": 1,
       "id": 6,
       "title": "qui ullam ratione quibusdam voluptatem quia omnis",
-      "completed": false
+      "completed": true
     },
     {
       "userId": 1,
@@ -41028,7 +41028,7 @@
     {
       "userId": 1,
       "title": "3 todo",
-      "completed": false,
+      "completed": true,
       "id": 202
     }
   ]

@@ -109,6 +109,8 @@ class NetworkService {
                 callback(value, err)
             }
     }
+    
+    
 
     static func getThumbnail(thumbnailURL: String, callback: @escaping (_ result: UIImage?, _ error: AFError?) -> ()) {
         if let image = CacheManager.shared.imageCache.image(withIdentifier: thumbnailURL) {
