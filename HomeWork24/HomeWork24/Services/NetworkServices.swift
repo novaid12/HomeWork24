@@ -19,6 +19,14 @@ class NetworkService {
                 callback()
             }
     }
+    
+    static func deleteToDo(id: Int, callback: @escaping () -> ()) {
+        let urlPath = "\(ApiConstants.todosPath)/\(id)"
+        AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
+            .response { _ in
+                callback()
+            }
+    }
 
     static func deleteUser(userId: Int, callback: @escaping () -> ()) {
         let urlUser = "\(ApiConstants.usersPath)/\(userId)"

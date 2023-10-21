@@ -11,6 +11,7 @@ import UIKit
 class ToDoCell: UITableViewCell {
     private var animationView: LottieAnimationView!
 
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet var emailLbl: UILabel!
     @IBOutlet var chechView: UIImageView!
 

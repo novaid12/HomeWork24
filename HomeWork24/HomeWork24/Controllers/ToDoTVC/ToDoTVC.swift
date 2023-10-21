@@ -30,13 +30,23 @@ class ToDoTVC: UITableViewController {
         let todos = toDos?[indexPath.row]
         cell.emailLbl.text = todos?.title
         cell.configure(isSelected: (todos?.completed)!)
-
+        cell.stackView.alpha = (todos?.completed)! ? 0.4 : 1.0
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped(_:)))
         cell.chechView.isUserInteractionEnabled = true
         cell.chechView.addGestureRecognizer(tapGesture)
         cell.chechView.tag = indexPath.row
 
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let id = toDos?[indexPath.row].id else { return }
+            NetworkService.deleteToDo(id: id) { [weak self] in
+                self?.toDos?.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
     }
 
     @objc func imageTapped(_ gesture: UITapGestureRecognizer) {

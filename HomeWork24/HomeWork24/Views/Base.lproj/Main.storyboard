@@ -602,6 +602,7 @@
                                 <connections>
                                     <outlet property="chechView" destination="JnH-PX-sHh" id="aje-9z-fje"/>
                                     <outlet property="emailLbl" destination="Rml-Wt-tiD" id="AXq-hv-ahv"/>
+                                    <outlet property="stackView" destination="ATO-Fi-aXJ" id="xXl-p7-iAA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
