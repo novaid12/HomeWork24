@@ -42,11 +42,11 @@ final class DetailVC: UIViewController {
         albumsCVC.userId = userData?.id.description
         navigationController?.pushViewController(albumsCVC, animated: true)
     }
+
     @IBAction func openMap(_ sender: Any) {
         openMapForPlace()
     }
 
-   
     @IBAction func editUserData(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let createVC = storyboard.instantiateViewController(withIdentifier: "CreateUserVC") as! CreateUserVC
@@ -55,6 +55,14 @@ final class DetailVC: UIViewController {
         createVC.delegate = self
         navigationController?.pushViewController(createVC, animated: true)
     }
+
+    @IBAction func goToDoList(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let toDoVC = storyboard.instantiateViewController(withIdentifier: "ToDoTVC") as! ToDoTVC
+        toDoVC.userId = userData?.id
+        navigationController?.pushViewController(toDoVC, animated: true)
+    }
+
     private func setupUI() {
         guard let user = userData else { return }
         nameLbl.text = user.name

@@ -11,19 +11,19 @@ import UIKit
 
 class AlbumsCVC: UICollectionViewController {
     var userId: String?
-    
+
     var albums: [Album] = []
     override func viewDidLoad() {
         fetchAlbums()
     }
-    
+
     // MARK: UICollectionViewDataSource
-    
+
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return albums.count
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlbumsCell", for: indexPath) as! AlbumsCell
         let album = albums[indexPath.row]
@@ -31,27 +31,32 @@ class AlbumsCVC: UICollectionViewController {
         cell.imageView.image = UIImage(systemName: "photo.artframe")
         return cell
     }
-    
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let album = albums[indexPath.row]
+        performSegue(withIdentifier: "showPhotos", sender: album)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPhotos",
+           let vc = segue.destination as? PhotosCVC,
+           let albom = sender as? Album
+        {
+            vc.albom = albom
+        }
+    }
+
     private func fetchAlbums() {
         guard let userId = userId else { return }
-        let url = "\(ApiConstants.albumsPath)/?userId=\(userId)"
-        AF.request(url, method: .get, encoding: JSONEncoding.default)
-            .responseJSON { [weak self] response in
-                switch response.result {
-                case .success(let data):
-                    if let data = response.data {
-                        do {
-                            self?.albums = try JSONDecoder().decode([Album].self, from: data)
-                            
-                        } catch {
-                            print("Error parsing JSON: \(error)")
-                        }
-                    }
-                    self?.collectionView.reloadData()
-                case .failure(let error):
-                    print(error)
-                }
+        NetworkService.fetchAlboms(userID: userId) { [weak self] albums, error in
+            if let error = error {
+                print(error)
+            } else if let albums = albums {
+                self?.albums = albums
+                
+                self?.collectionView.reloadData()
             }
+        }
     }
 }
 
