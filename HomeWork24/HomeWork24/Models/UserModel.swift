@@ -66,3 +66,11 @@ struct Comment: Codable {
     let email: String?
     let body: String?
 }
+
+struct ToDos: Codable {
+    let userId: Int?
+    let id: Int
+    let title: String?
+    let completed: Bool?
+}
+
